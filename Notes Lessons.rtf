@@ -1,0 +1,155 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1046{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fswiss\fprq2\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sl276\slmult1\b\f0\fs36\lang22 Power BI Week\line\b0\fs24 Building a Complete Dashboard from Scratch in Power BI\par
+\par
+\b\fs22 Hit the like button and subscribe to the channel\par
+\par
+Tell me where you are from in the chat\b0\par
+\par
+\b Post on LinkedIn and Instagram Stories and tag me: @leokarpa\par
+\b0\par
+Some important notes:\par
+\tab - We will have three sessions: Monday, Tuesday and Thursday\par
+\tab - I am live with you in the chat during the sessions\par
+\tab - The database and materials are available in the link in the description\par
+\tab - Do not try to reproduce at the same time with me, watch first and practice later\par
+\tab - All recordings will be available until Sunday\par
+\tab - On Thursday I will provide my solution (PBIX file) and send the link for the Certificate for those who watch Live\par
+\tab - I will also open the doors to my complete training program on Thursday with a very special offer\par
+\par
+\par
+\b Pretend you paid a large amount to participate in this event and be committed during this week!\par
+\b0\par
+\b Answer me in the chat:\par
+\tab 1) never used Power BI\par
+\tab 2) beginner\par
+\tab 3) intermediate\par
+\tab 4) expert\par
+\par
+\par
+\b0 ----------------------------------------------------------------------------------------\par
+\b The basics\par
+\par
+\fs32 - How can I download Power BI?\par
+\tab {{\field{\*\fldinst{HYPERLINK https://powerbi.microsoft.com/en-us/desktop/ }}{\fldrslt{https://powerbi.microsoft.com/en-us/desktop/\ul0\cf0}}}}\f0\fs32\par
+\b0\fs22\par
+\b - How much is Power BI?\par
+\tab FREE\par
+\b0\par
+- Excel vs Power BI\par
+\tab - Excel is a report-based tool. Simple to use but too many copy and paste techniques.\par
+\tab - Power BI is a model-based tool that you can create reports on top of a data model. Once defined the model, you can build differenr reports with the same data.\par
+\tab - During the development of our dashboard I will compare both tools again.\par
+\par
+\b\par
+\b0 -----------------------------------------------------\par
+\b 1) Extract\b0\par
+\b\par
+\b0 Where does data come from?\par
+Generaly from an OLTP database. But the way we connect to this data can vary across organizations, mainly due to security reasons.\par
+\par
+How do you get the data you work with today?\par
+\b\par
+\b0\tab 1) Connecting directly in the transactional database (OLTP)\par
+\tab 2) Connecting to a Data Warehouse (DW)\par
+\tab 3) Through an Excel file connected to the database\par
+\b\tab 4) Extracting reports from the ERP system\par
+\tab 5) Filling out spreadsheets manually\b0\line\par
+\b\par
+\b0 -----------------------------------------------------\par
+\b 2) Transform\b0\par
+\b\line\b0 - What is the correct structure of a table?\par
+\b\tab - Always columnar \par
+\tab - Each column must represent a unique type of information\par
+\par
+\b0 - When you deal with real data, it is usually messy and dirty\par
+\tab - So it is extremely important to TRANSFORM it before loading into the model\b\par
+\par
+- Power Query is our best friend for this. It is the tool to prepare, transform and put the data into the right shape\par
+- Even better: you do this only once, because it automates all your ETL process\par
+\par
+\par
+\b0 -----------------------------------------------------\par
+\b 3) Modeling\b0\par
+\b\par
+\b0 - We always have to think about two types of table:\par
+\par
+\tab 1) Dimension tables: \par
+\tab\tab - Describe business entities, the things in our model.\par
+\tab\tab - Lookup tables, the What, When, Where, Who.\par
+\tab\tab - They store the perspectives, the attributes of the entities, their descriptions.\par
+\tab\tab - Must contain a key column that acts as a unique identifier.\par
+\tab\tab - They are used to filter and group the values you want to analyze\par
+\tab\tab - You use them usualy in the axis of the visuals and on slicers.\par
+\tab\tab - Usually short but wide (not so many rows and lots of columns).\par
+\tab\tab - Ex: products, customers, suppliers, accounts, etc\par
+\par
+\tab 2) Fact tables:\par
+\tab\tab - Data table, the transactions, events that happen over time.\par
+\tab\tab - Usually there is a date associated to an event.\par
+\tab\tab - Contains dimension key columns that relate to dimension tables, and numeric columns.\par
+\tab\tab - Can be very tall (and grow over time) but usualy thin (lots of rows and not so many columns).\par
+\tab\tab - Ex: sales orders, stock balances, financial transactions, temperatures, etc.\par
+\b\par
+\par
+\par
+\b0 -----------------------------------------------------\par
+\b 4) Calculation\b0\par
+\b\par
+\b0 - DAX: Data Analysis eXpressions\par
+\par
+
+\pard\nowidctlpar\sl276\slmult1\f1 - We can create columns, measures or tables with DAX\par
+\tab 1) Columns: consume memory and are static calculations. Use it for descriptive information on the Axis and Filters.\par
+\tab 2) Measures: are dynamic and consume only CPU, because they are calculated on the fly. Use always for Math (numbers that you place in the Values of the visuals);\par
+\tab 3) Tables: not used often. It is better to create them in Power Query, with exception to the Date table.\par
+
+\pard\sl276\slmult1\b\f0\par
+
+\pard\nowidctlpar\sl276\slmult1\f1 Where is the Power of DAX? 1, 2 or 3?\par
+
+\pard\sl276\slmult1\f0\par
+\b0 - Filter context:\par
+\tab - The combination of all filters that are applied on the report\par
+\tab - They propagate through the relationships and provide a subset of the original table, a filtered table\par
+\par
+- CALCULATE function: it is the only that can modify the evulation context\par
+\tab - Syntax: CALCULATE( <expression>, Filter 1, Filter 2, ... )\par
+\b\par
+\par
+\b0 -----------------------------------------------------\par
+\b 5) Visuals\b0\par
+\b\par
+\b0 - What is Data Storytelling?\line\tab -> The power of building a narrative around a set of data to help convey the meaning of that data in a powerful and compelling fashion \line\tab\tab {{\field{\*\fldinst{HYPERLINK https://tdwi.org/portals/what-is-data-storytelling-definition.aspx }}{\fldrslt{https://tdwi.org/portals/what-is-data-storytelling-definition.aspx\ul0\cf0}}}}\f0\fs22\par
+\tab -> In other words, to guide your audience smoothly through the analysis.\par
+\tab -> A dashboard is like a joke. If you have to explain that's because it was not good.\par
+\b\par
+\b0 - Recomendations:\par
+\tab 1) Identify your audience\par
+\tab\tab - Ask how a dashboard will be used and design for next step actions\par
+\tab\tab - What information does the reader need to be successful?\par
+\tab\tab - How much detail does the reader need?\par
+\tab 2) Draw a sketch\par
+\tab\tab - Good design should tell a story with data that does not become overwhelming with way too much information, clutter or noise. \par
+\tab\tab - Limit content to fit entirely on one screen.\par
+\tab\tab - Keep your dashboard simple with only a 3 to 5 key values, charts, or tables. Avoid putting too much information on a dashboard.\par
+\tab\tab - If detail tables are needed, place them on the bottom of the dashboard\par
+\tab 3) Choose the right visuals\par
+\tab 4) Choose the right theme and keep consistency\par
+\tab\tab - {{\field{\*\fldinst{HYPERLINK https://color.adobe.com/explore }}{\fldrslt{https://color.adobe.com/explore\ul0\cf0}}}}\f0\fs22\par
+
+\pard\li720\sl276\slmult1\b 5) Create a background (WOW effect)\par
+\b0 6) Use icons and images to add context \par
+\tab - {{\field{\*\fldinst{HYPERLINK https://logomakr.com }}{\fldrslt{https://logomakr.com\ul0\cf0}}}}\f0\fs22\par
+7) Align all visuals properly\par
+8) Use references to get inspiration\par
+9) Use visualization features from Power BI (tooltip, drill-through, bookmarks...)\par
+
+\pard\sl276\slmult1\b\par
+\par
+\par
+\par
+\b0\par
+}
+ 
